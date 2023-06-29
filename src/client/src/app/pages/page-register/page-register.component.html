@@ -1,0 +1,17 @@
+<p>register works!</p>
+
+<form [formGroup]="form">
+  <input type="text" formControlName="username" placeholder="Username">
+  <input type="password" formControlName="password" placeholder="Password">
+</form>
+
+<button (click)="register()">Register</button>
+
+<button (click)="login()">Login</button>
+
+
+<ng-container *ngIf="users$ | async  as users">
+  <app-users-list [users]="users"></app-users-list>
+</ng-container>
+
+
